@@ -14,7 +14,7 @@ router = APIRouter()
 
 
 @router.post("/wallet_info")
-async def get_wallet_info(
+async def wallet_info(
         address: str = Query(..., example="TJr3zJnW24eqVyAjNDRoDnwARfhNaAsDaZ"),
         # address: str = Query(..., examples=["TJr3zJnW24eqVyAjNDRoDnwARfhNaAsDaZ",]),
         db: AsyncSession = Depends(get_db),

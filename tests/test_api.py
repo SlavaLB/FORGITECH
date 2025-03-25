@@ -1,6 +1,5 @@
 import pytest
 from fastapi.testclient import TestClient
-
 from backend.main import app
 
 client = TestClient(app)
@@ -26,7 +25,7 @@ async def test_wallet_info_basic():
 async def test_wallet_info_error_handling():
     """Тест обработки ошибок"""
     response = client.post("/wallet_info")
-    assert response.status_code == 422  # Validation Error
+    assert response.status_code == 422
 
     response = client.post(
         "/wallet_info",
